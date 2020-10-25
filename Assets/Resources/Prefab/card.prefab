@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513197875815867349}
   - component: {fileID: 2960119988733217678}
+  - component: {fileID: -6587482972936954926}
   m_Layer: 0
   m_Name: card
   m_TagString: Untagged
@@ -97,6 +98,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-6587482972936954926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921696412325828790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dacede8a8ec05342b708d5b0303d450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &731265066487243121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -107,7 +120,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_2
+      value: cell_02
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -257,7 +270,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_7
+      value: cell_07
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -332,7 +345,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_8
+      value: cell_08
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -407,7 +420,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_0
+      value: cell_00
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -482,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_3
+      value: cell_03
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -557,7 +570,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_1
+      value: cell_01
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -632,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_9
+      value: cell_09
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -707,7 +720,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_6
+      value: cell_06
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -782,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_5
+      value: cell_05
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
@@ -1082,7 +1095,7 @@ PrefabInstance:
     - target: {fileID: 7385052271060851825, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
       propertyPath: m_Name
-      value: cell_4
+      value: cell_04
       objectReference: {fileID: 0}
     - target: {fileID: 8549446390533217184, guid: b9ed248bd97d84648b5644e1655243b6,
         type: 3}
