@@ -9,9 +9,15 @@ public class Card : MonoBehaviour
 {
     private List<int> allNumbers = new List<int>();
     
+    private List<Cell> cells = new List<Cell>();
+    private SpriteRenderer myRenderer;
+    
+
     void Start()
     {
-        var cells = Transform.FindObjectsOfType<Cell>().ToList();
+        FindObjectOfType<Bombo>().drawn.AddListener(CheckMatch);
+        
+        cells = Transform.FindObjectsOfType<Cell>().ToList();
         cells = cells.OrderBy(c => c.transform.GetSiblingIndex()).ToList();
         
         var numbers = Enumerable.Range(1, 90).ToList();
@@ -30,4 +36,13 @@ public class Card : MonoBehaviour
     {
         
     }
+    public void CheckMatch(int number, int drawIndex)
+    {
+        if (cells.Any(c => c.Number == number))
+        {
+            var currCell =cells.Find(ce => ce.Number == number);
+            currCell.myType = CellType.X;
+        }
+    }
+    
 }

@@ -8,13 +8,19 @@ public class Ball : MonoBehaviour
     private int myIndex;
     private int myNumber;
 
-    private SpriteRenderer myReneder;
+    private SpriteRenderer myRenederer;
+    private List<Sprite> allNumbers = new List<Sprite>();
     
     // Start is called before the first frame update
     void Start()
     {
-        myReneder = GetComponent<SpriteRenderer>();
+        Sprite[] ballImages = Resources.LoadAll <Sprite> ("Images/ballsSmall");  
+        allNumbers.AddRange(ballImages);
+        
+        myRenederer = GetComponent<SpriteRenderer>();
         myIndex = transform.GetSiblingIndex();
+
+        FindObjectOfType<Bombo>().drawn.AddListener(CheckShow);
     }
 
     // Update is called once per frame
@@ -23,11 +29,12 @@ public class Ball : MonoBehaviour
         
     }
 
-    public void CheckShow(int number, int drawnIndex)
+    public void CheckShow(int number, int drawIndex)
     {
-        if (drawnIndex == myIndex)
+        if (drawIndex == myIndex)
         {
-            myReneder.sprite = Resources.Load<Sprite>("Images/ballsSmall/ballSmall_" + number);
+            myRenederer.sprite = allNumbers[number];
+            myRenederer.color =Color.white;
         }
     }
 }
