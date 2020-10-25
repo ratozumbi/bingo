@@ -271,6 +271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: bombo
       objectReference: {fileID: 0}
+    - target: {fileID: 3096608376293546868, guid: 67f865638b953104fbfbbfcd05c28ad3,
+        type: 3}
+      propertyPath: maxBallNumber
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67f865638b953104fbfbbfcd05c28ad3, type: 3}
 --- !u!1001 &2063112019
@@ -280,6 +285,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6587482972936954926, guid: 22fb14a1b9df15f47a34cf930a0551d2,
+        type: 3}
+      propertyPath: maxCardNumber
+      value: 39
+      objectReference: {fileID: 0}
     - target: {fileID: 513197875815867349, guid: 22fb14a1b9df15f47a34cf930a0551d2,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -32,8 +32,8 @@ public class Cell : MonoBehaviour
         get => _number;
         set
         {
-            GetComponentInChildren<TextMesh>().text = value.ToString();
             _number = value;
+            GetComponentInChildren<TextMesh>().text = (_number+1).ToString();
         }
     }
 
@@ -42,7 +42,7 @@ public class Cell : MonoBehaviour
     {
         Sprite[] cellImages = Resources.LoadAll <Sprite> ("Images/cell");  
         dictCells.AddRange(cellImages);
-        myType = CellType.Red;
+        myType = CellType.Blank;
 
     }
 

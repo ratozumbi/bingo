@@ -7,6 +7,9 @@ using Random = UnityEngine.Random;
 
 public class Card : MonoBehaviour
 {
+    [Tooltip("minus one")]
+    public int maxCardNumber = 59;
+    
     private List<int> allNumbers = new List<int>();
     
     private List<Cell> cells = new List<Cell>();
@@ -20,7 +23,7 @@ public class Card : MonoBehaviour
         cells = Transform.FindObjectsOfType<Cell>().ToList();
         cells = cells.OrderBy(c => c.transform.GetSiblingIndex()).ToList();
         
-        var numbers = Enumerable.Range(1, 90).ToList();
+        var numbers = Enumerable.Range(1, maxCardNumber).ToList();
         numbers = numbers.OrderBy(i => Guid.NewGuid()).ToList().GetRange(0, 15);
 
         allNumbers = numbers.OrderBy(n => n).ToList();
