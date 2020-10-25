@@ -40,6 +40,10 @@ public class Card : MonoBehaviour
         allPrizes.Add(new Prize( 0b000001111100000,100));
         allPrizes.Add(new Prize( 0b000000000011111,100));
         
+        allPrizes.Add(new Prize( 0b00100_01010_10001,333));
+        
+        allPrizes.Add(new Prize( 0b11111_11111_11111,1000));
+        
     }
 
     // Update is called once per frame
@@ -52,12 +56,24 @@ public class Card : MonoBehaviour
             {
                 print("PRIZE!");
                 prize.paid = true;
+                int currBalance = PlayerPrefs.GetInt("total", 0);
+                currBalance += prize.value;
+                PlayerPrefs.SetInt("total",currBalance);
+
+                GameObject.Find("score").GetComponent<TextMesh>().text = currBalance.ToString();
 
                 for (int i = 0; i < cells.Count; i++)
                 {
                     if ((prize.mask & (1<<i)) == (1<<i))
                     {
-                        cells[i].myType = CellType.Red;
+                        if (prize.value == 1000)
+                        {
+                            cells[i].myType = CellType.Red;
+                        }
+                        else
+                        {
+                            cells[i].myType = CellType.Yellow;
+                        }
                     }
                 }
             }

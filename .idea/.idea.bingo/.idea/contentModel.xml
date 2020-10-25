@@ -13,6 +13,7 @@
           <e p="Cell.cs" t="Include" />
           <e p="GameFlow.cs" t="Include" />
           <e p="Prize.cs" t="Include" />
+          <e p="Score.cs" t="Include" />
         </e>
       </e>
       <e p="bingo.sln" t="IncludeFlat" />
