@@ -11,7 +11,7 @@ public class Cell : MonoBehaviour
     
     private SpriteRenderer spriteRenderer;
     
-    public List<Sprite> dictCells = new List<Sprite>();
+    private List<Sprite> allCellSprites = new List<Sprite>();
     private int _number;
     private CellType _myType;
     public CellType myType
@@ -23,7 +23,7 @@ public class Cell : MonoBehaviour
         set
         {
             _myType = value;
-            GetComponent<SpriteRenderer>().sprite = dictCells[(int)_myType];
+            GetComponent<SpriteRenderer>().sprite = allCellSprites[(int)_myType];
         }
     }
 
@@ -41,7 +41,7 @@ public class Cell : MonoBehaviour
     void Start()
     {
         Sprite[] cellImages = Resources.LoadAll <Sprite> ("Images/cell");  
-        dictCells.AddRange(cellImages);
+        allCellSprites.AddRange(cellImages);
         myType = CellType.Blank;
 
     }

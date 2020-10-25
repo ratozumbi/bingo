@@ -52,6 +52,14 @@ public class Card : MonoBehaviour
             {
                 print("PRIZE!");
                 prize.paid = true;
+
+                for (int i = 0; i < cells.Count; i++)
+                {
+                    if ((prize.mask & (1<<i)) == (1<<i))
+                    {
+                        cells[i].myType = CellType.Red;
+                    }
+                }
             }
         }
     }
@@ -62,7 +70,7 @@ public class Card : MonoBehaviour
         {
             
             var currCell =cells.Find(ce => ce.Number == number);
-            myMask = myMask << 1 * currCell.transform.GetSiblingIndex();
+            myMask = myMask | 1<< currCell.transform.GetSiblingIndex();
             currCell.myType = CellType.X;
         }
     }

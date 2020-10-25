@@ -11,6 +11,7 @@
           <e p="Bombo.cs" t="Include" />
           <e p="Card.cs" t="Include" />
           <e p="Cell.cs" t="Include" />
+          <e p="GameFlow.cs" t="Include" />
           <e p="Prize.cs" t="Include" />
         </e>
       </e>

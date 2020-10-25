@@ -13,7 +13,8 @@ public class DrawnEvent : UnityEvent<int,int> // ball number , draft index
 public class Bombo : MonoBehaviour
 {
     public DrawnEvent drawn;
-    
+
+    public float drawnSpeed = 0.1f;
     public int maxBallNumber = 30;
     
     private int maxBalls = 30;
@@ -44,7 +45,7 @@ public class Bombo : MonoBehaviour
     {
         if (canDrawn)
         {
-            if (Time.time - lastDraw > 0.5)
+            if (Time.time - lastDraw > drawnSpeed)
             {
                 DrawBall();
                 lastDraw = Time.time;    

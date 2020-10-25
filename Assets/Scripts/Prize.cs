@@ -7,9 +7,14 @@ public class Prize
     public int value;
     public bool paid = false;
 
+    public Prize()
+    {
+        
+    }
+    
     public Prize(int mask, int value)
     {
-        mask = this.mask;
-        value = this.value;
+        this.mask = mask;
+        this.value = value;
     }
 }
