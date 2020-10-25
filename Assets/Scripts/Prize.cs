@@ -6,4 +6,10 @@ public class Prize
     public int mask;
     public int value;
     public bool paid = false;
+
+    public Prize(int mask, int value)
+    {
+        mask = this.mask;
+        value = this.value;
+    }
 }

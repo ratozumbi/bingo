@@ -15,6 +15,8 @@ public class Card : MonoBehaviour
     private List<Cell> cells = new List<Cell>();
     private SpriteRenderer myRenderer;
     
+    private List<Prize>allPrizes = new List<Prize>();
+    private int myMask;
 
     void Start()
     {
@@ -32,18 +34,35 @@ public class Card : MonoBehaviour
             cells[i].Number = allNumbers[i];
         }
 
+        //add prizes
+        
+        allPrizes.Add(new Prize( 0b111110000000000,100));
+        allPrizes.Add(new Prize( 0b000001111100000,100));
+        allPrizes.Add(new Prize( 0b000000000011111,100));
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (Prize prize in allPrizes)
+        {
+            if(prize.paid == true) continue;
+            if ((prize.mask & myMask) == prize.mask)
+            {
+                print("PRIZE!");
+                prize.paid = true;
+            }
+        }
     }
+    
     public void CheckMatch(int number, int drawIndex)
     {
         if (cells.Any(c => c.Number == number))
         {
+            
             var currCell =cells.Find(ce => ce.Number == number);
+            myMask = myMask << 1 * currCell.transform.GetSiblingIndex();
             currCell.myType = CellType.X;
         }
     }

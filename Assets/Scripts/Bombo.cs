@@ -21,6 +21,9 @@ public class Bombo : MonoBehaviour
     private int drawnIndex = 0;
     private SpriteRenderer myRenderer;
     private List<Sprite> allSpriteNumbers = new List<Sprite>();
+
+    private bool canDrawn = true;
+    private float lastDraw;
     
     // Start is called before the first frame update
     void Start()
@@ -39,12 +42,20 @@ public class Bombo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DrawBall();
+        if (canDrawn)
+        {
+            if (Time.time - lastDraw > 0.5)
+            {
+                DrawBall();
+                lastDraw = Time.time;    
+            }
+        }
     }
 
     private void DrawBall()
     {
         if (drawnIndex >= maxBalls) return;
+        myRenderer.color = Color.white;
         myRenderer.sprite = allSpriteNumbers[allNumbers[drawnIndex]];
         drawn.Invoke(allNumbers[drawnIndex],drawnIndex);
         drawnIndex++;
