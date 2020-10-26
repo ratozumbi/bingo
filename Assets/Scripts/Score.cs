@@ -8,12 +8,18 @@ public class Score : MonoBehaviour
     void Start()
     {
         int currBalance = PlayerPrefs.GetInt("total", 0);
+        if (currBalance <= 0)//initial credit
+        {
+            PlayerPrefs.SetInt("total",111);
+        }
         GetComponent<TextMesh>().text = currBalance.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PayToPlay()
     {
-        
+        int currBalance = PlayerPrefs.GetInt("total", 0);
+        currBalance -= 10;
+        PlayerPrefs.SetInt("total", currBalance);
+        GetComponent<TextMesh>().text = currBalance.ToString();
     }
 }

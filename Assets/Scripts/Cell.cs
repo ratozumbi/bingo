@@ -46,9 +46,11 @@ public class Cell : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RedToYellow()
     {
-        
+        if (myType == CellType.Red)
+        {
+            myType = CellType.Yellow;
+        }
     }
 }

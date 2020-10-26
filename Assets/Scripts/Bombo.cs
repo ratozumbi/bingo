@@ -16,6 +16,7 @@ public class Bombo : MonoBehaviour
 
     public float drawnSpeed = 0.1f;
     public int maxBallNumber = 30;
+    public float prizeTime = 2f;
     
     private int maxBalls = 30;
     private List<int> allNumbers = new List<int>();
@@ -60,6 +61,21 @@ public class Bombo : MonoBehaviour
         myRenderer.sprite = allSpriteNumbers[allNumbers[drawnIndex]];
         drawn.Invoke(allNumbers[drawnIndex],drawnIndex);
         drawnIndex++;
+    }
+
+    public void WaitPrizeAnimation()
+    {
+        canDrawn = false;
+        Invoke(nameof(ResumeDrawn),prizeTime);
+    }
+    private void ResumeDrawn()
+    {
+        canDrawn = true;
+        var allCells = FindObjectsOfType<Cell>();
+        foreach (var cell in allCells)
+        {
+            cell.RedToYellow();
+        }
     }
     
 }

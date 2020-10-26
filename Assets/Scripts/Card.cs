@@ -36,13 +36,14 @@ public class Card : MonoBehaviour
 
         //add prizes
         
-        allPrizes.Add(new Prize( 0b111110000000000,100));
-        allPrizes.Add(new Prize( 0b000001111100000,100));
-        allPrizes.Add(new Prize( 0b000000000011111,100));
+        allPrizes.Add(new Prize( 0b111110000000000,100));//line
+        allPrizes.Add(new Prize( 0b000001111100000,100));//line
+        allPrizes.Add(new Prize( 0b000000000011111,100));//line
         
-        allPrizes.Add(new Prize( 0b00100_01010_10001,333));
-        
-        allPrizes.Add(new Prize( 0b11111_11111_11111,1000));
+        allPrizes.Add(new Prize( 0b00100_01010_10001,333));//V
+        allPrizes.Add(new Prize( 0b10001_01010_00100,333));//^
+
+        allPrizes.Add(new Prize( 0b11111_11111_11111,1000));//bingo
         
     }
 
@@ -51,10 +52,20 @@ public class Card : MonoBehaviour
     {
         foreach (Prize prize in allPrizes)
         {
-            if(prize.paid == true) continue;
+            if(prize.paid) continue;
             if ((prize.mask & myMask) == prize.mask)
             {
                 print("PRIZE!");
+                FindObjectOfType<Bombo>().WaitPrizeAnimation();
+                //pays line only once
+                int index = allPrizes.FindIndex(p => p == prize);
+                if (index < 3)
+                {
+                    allPrizes[0].paid = true;
+                    allPrizes[1].paid = true;
+                    allPrizes[2].paid = true;
+                }
+
                 prize.paid = true;
                 int currBalance = PlayerPrefs.GetInt("total", 0);
                 currBalance += prize.value;
@@ -66,14 +77,7 @@ public class Card : MonoBehaviour
                 {
                     if ((prize.mask & (1<<i)) == (1<<i))
                     {
-                        if (prize.value == 1000)
-                        {
-                            cells[i].myType = CellType.Red;
-                        }
-                        else
-                        {
-                            cells[i].myType = CellType.Yellow;
-                        }
+                        cells[i].myType = CellType.Red; 
                     }
                 }
             }
